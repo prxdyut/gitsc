@@ -1,0 +1,4 @@
+*.py linguist-language=Python
+*.md linguist-documentation
+requirements.txt linguist-vendored=false
+setup.py linguist-vendored=false 
