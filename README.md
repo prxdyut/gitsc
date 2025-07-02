@@ -1,4 +1,4 @@
-# gitc (Git Commit AI)
+# gitsc (Git Semantic Commit)
 
 A command-line tool that generates semantic commit messages using AI, following the Conventional Commits format.
 
@@ -14,24 +14,16 @@ A command-line tool that generates semantic commit messages using AI, following 
 
 ## Installation
 
-1. Clone this repository:
+You can install gitsc directly from PyPI:
 ```bash
-git clone https://github.com/yourusername/gitc.git
-cd gitc
+pip install gitsc
 ```
 
-2. Create a virtual environment and activate it:
+Or install from source:
 ```bash
-python -m venv venv
-# On Windows
-venv\Scripts\activate
-# On Unix or MacOS
-source venv/bin/activate
-```
-
-3. Install the required packages:
-```bash
-pip install -r requirements.txt
+git clone https://github.com/prxdyut/gitsc.git
+cd gitsc
+pip install -e .
 ```
 
 ## GROQ API Key Setup
@@ -44,8 +36,8 @@ You'll need a GROQ API key to use this tool. Here's how to get one:
 
 You can set up your API key in several ways:
 1. Let the tool prompt you on first use
-2. Use the command-line flag: `python gitc.py --api-key "your-api-key"`
-3. Create a `.env` file in the project root with:
+2. Use the command-line flag: `gitsc --api-key "your-api-key"`
+3. Create a `.env` file in your project with:
    ```
    GROQ_API_KEY=your_api_key_here
    ```
@@ -61,29 +53,29 @@ Currently supported models:
 
 Select a model using the `--model` or `-m` flag:
 ```bash
-python gitc.py -m llama3-8b "your commit message"
+gitsc -m llama3-8b "your commit message"
 ```
 
 ## Usage
 
 Basic usage:
 ```bash
-python gitc.py "Your commit description here"
+gitsc "Your commit description here"
 ```
 
 With model selection:
 ```bash
-python gitc.py -m llama3-8b "add new user authentication feature"
+gitsc -m llama3-8b "add new user authentication feature"
 ```
 
 Update API key:
 ```bash
-python gitc.py -k "your-new-api-key"
+gitsc -k "your-new-api-key"
 ```
 
 Running without arguments will show the help message and setup instructions:
 ```bash
-python gitc.py
+gitsc
 ```
 
 The tool will generate a semantic commit message and present you with options:

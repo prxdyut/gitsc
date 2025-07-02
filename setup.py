@@ -3,21 +3,18 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
-
 setup(
-    name="gitc",
-    version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    name="gitsc",
+    version="1.0.0",
+    author="Pradyut Das",
+    author_email="daspradyut516@gmail.com",
     description="AI-powered semantic git commit message generator using Groq's LLaMA models",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/gitc",
+    url="https://github.com/prxdyut/gitsc",
     packages=find_packages(),
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
@@ -32,10 +29,10 @@ setup(
         "Topic :: Software Development :: Version Control :: Git",
     ],
     python_requires=">=3.6",
-    install_requires=requirements,
+    install_requires=["groq", "python-dotenv"],
     entry_points={
         "console_scripts": [
-            "gitc=gitc.cli:main",
+            "gitsc=gitsc.cli:main",
         ],
     },
 ) 
